@@ -5,7 +5,8 @@ resource "intersight_access_policy" "access1" {
   name        = "access1"
   description = "demo imc access policy"
 
-  # Optional hash map to limit management types
+  # Optional hash map to limit management types. Provider fails upon apply if
+  # type is true and corresponding ip_pool is not defined.
   configuration_type {
     configure_inband      = true
     configure_out_of_band = false
